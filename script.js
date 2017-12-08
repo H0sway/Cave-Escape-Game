@@ -19,10 +19,18 @@ $(document).ready(() => {
 
   // Form submit event
   const $form = $("form");
-  $form.submit($window.changeRoom);
+  $form.submit(changeRoom);
+
+  changeRoom = function(event) {
+    event.preventDefault();
+    const $command = $("input[name=commands]");
+    alert($command.val());
+  }
+
+  let $text = ("#gameText");
+  $text.html("I dun changed it");
+
   // Get the form inputs
-  const $input = $("input[id=commands]")
-  let $command = $input.val();
 
   // Define each of the valid commands as variables
     // Commands are Forwards, Backwards, Left, Right
@@ -49,6 +57,7 @@ $(document).ready(() => {
   // Define each room
 
   let $start = new Room($r1,false,false,false,"Hi There!");
+  let $r1 = new Room(false,$start,false,false,"Go Away");
 
   // Create a class for just the game.
     // One property, currentRoom = the defined variable of the room the player is in
@@ -61,39 +70,11 @@ $(document).ready(() => {
       // If the player inputs a valid command that leads to a room, should change the current room to be that room.
         // Grabs the property of the current room corresponding to the direction the player moved and makes that the current room
 
-  // constructor function for the game class
-  class Game {
-    constructor(currentRoom) {
-      // The room the player is in
-      this.currentRoom = currentRoom;
-    }
-    // Change the text in the game window
-    changeText() {
-      let $desc = $("#gameText");
-      $desc.HTML(currentRoom.text);
-    }
-    // Change the room the player is in
-    changeRoom(event) {
-      preventDefault();
-      // Trying to go in a direction with no room
-      if ($command = false) {
-        return alert("You smacked your head against the wall");
-      } if ($command = "Forward") {
-        currentRoom = currentRoom.fwd;
-      } if ($command = "Backward") {
-        currentRoom = currentRoom.bwd;
-      } if ($command = "Left") {
-        currentRoom = currentRoom.left;
-      } if ($command = "Right") {
-        currentRoom = currentRoom.right;
-      // Invalid command
-      } else {
-        return alert("Command not recognized. Please check the instructions on the left.");
-      }
-    }
-  }
+  // Game is now an object:
 
-  let $window =  new Game($start);
+  let $game = {
+    currentRoom: $start,
+  }
 
   // Click event for the reset button which returns the player to the starting room.
 
