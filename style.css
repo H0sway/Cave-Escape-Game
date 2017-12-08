@@ -21,6 +21,8 @@ h1 {
 form {
   margin: 20px auto;
   text-align: center;
+  opacity: 0;
+  transition: 1s;
 }
 
 legend {
@@ -47,6 +49,7 @@ footer {
   position: relative;
   left: 80px;
   float: right;
+  transition: 1s;
 
 }
 
@@ -57,7 +60,13 @@ footer {
   background-color: #a6a6a6;
   padding: 1px 10px;
   float: left;
+  border-radius: 5px;
   margin: 30px;
+  transition: .5s;
+}
+
+#article:hover {
+  opacity: 0.8;
 }
 
  #game {
@@ -67,19 +76,40 @@ footer {
   padding: 0 10px;
   border: 1px solid #ffffff;
   margin: 30px auto;
+  opacity: 0;
+  transition: 1s;
  }
 
  #gametext {
   overflow: hidden;
-  border-right: 2px solid #cccc00;
+  /*border-right: 2px solid #cccc00;*/
   color: #cccc00;
   line-height: 30px;
   font-size: 20px;
   font-family: 'Mogra', cursive;
-  animation:
+  /*animation only working if text is a single line*/
+/*  animation:
   typing 4s steps(40, end),
-  cursor-blink 1s step-end infinite;
+  cursor-blink 1s step-end infinite;*/
  }
+
+ #start {
+  width: 125px;
+  background-color: #ffffff;
+  position: relative;
+  top: 100px;
+  left: -55px;
+  color: #cc0000;
+  margin: 0 auto;
+  border: 1px solid #cc0000;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  opacity: 1;
+  transition: 1s;
+  z-index: 20;
+}
 
  #reset {
   width: 60px;
@@ -93,6 +123,9 @@ footer {
   padding: 8px 16px;
   text-align: center;
   cursor: pointer;
+  transition: .2s;
+  opacity: 0;
+  transition: 1s;
  }
 
 #reset:hover {
