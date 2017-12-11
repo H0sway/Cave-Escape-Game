@@ -42,11 +42,11 @@ Priority matrix for the game. Took the points from the checklist and organized t
 
 ### Landing Page
 This is what the player will see when they load into the game. The instructions will be clearly visible and the player won't be able to start the game until they click on the "Start Game" button. 
-![Landing Page](Photos/Landing-Page)
+![Landing Page](Photos/Landing-Page.png)
 
 ### Game Initialization
 After clicking the "Start Button" the game window should appear as depicted while the button fades into the background. From here the player can input commands and navigate around the cave. 
-![Game Start](Photos/Game-Start)
+![Game Start](Photos/Game-Start.png)
 
 
 
