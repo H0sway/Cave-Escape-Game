@@ -48,6 +48,18 @@ This is what the player will see when they load into the game. The instructions 
 After clicking the "Start Button" the game window should appear as depicted while the button fades into the background. From here the player can input commands and navigate around the cave. 
 ![Game Start](Photos/Game-Start.png)
 
+### Playing the Game
+After entering a valid command the player should see the text in the game window change to reflect what part of the cave the player is in. Each section has a unique description so the player can remember places they've been before. Entering an invalid command will result in no action taking place, while attempting to walk in a direction with no exit will result in a pop up telling the player they banged their head against the wall. As they travel the player will reach dead ends and circles, causing them to potentially lose their bearings temporarily.
+
+### Winning the Game
+The player wins the game when they've reached the exit to the cave. A congratulatory message will display, telling the player they've escaped from the cave successfully, and if they wish to try again to press the "Retry" button. 
+
+
+
+
+
+
+
 
 
 

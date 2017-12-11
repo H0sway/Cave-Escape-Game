@@ -31,7 +31,7 @@ $(document).ready(() => {
   }
 
   // Creating each room, start =  starting room, r = normal room, de = dead end, finish = last room
-  let $start = new Room(false,false,false,false,"You wake up to in a dark enclosed area. Rock walls surround you and the ceiling is low. Beside you is a lantern. You pick it up and see an exit in front of you, leading into darkness.");
+  let $start = new Room(false,false,false,false,"You wake up in a dark enclosed area. Rock walls surround you and the ceiling is low. Beside you is a lantern. You pick it up and see an exit in front of you, leading into darkness.");
   let $r1 = new Room(false,$start,false,false,"You enter a dimly lit area with exits in front of you and to the right.");
   let $r2 = new Room(false,false,$r1,false,"You enter a narrow corridor with exits in front of you and to the left of you.");
   let $de1 = new Room(false,$r1,false,false,"You stumble over some rocks as you enter this section of the cave. As you look up you see only rock walls surrounding you. The only way out is behind you.");
