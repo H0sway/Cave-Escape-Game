@@ -1,5 +1,7 @@
 # Cave Escape Project
 
+Cave Escape is a game where the player wakes up in a cave and must navigate their way through the maze to get to freedom. They move from area to area by typing in commands in the prompt underneath the game window. When the player wants to start over they can click on the "Retry" button which will return them to the starting room. The commands are clearly outlined in the instruction box to the left of the game window. The player moves by typing in left, right, forwards, and backwards. 
+
 ## Whiteboarding Images
 
 These are concepts I drew on whiteboards when initially planning out the game. They detail the generic layout and features I had planned. 
@@ -35,3 +37,20 @@ Initial checklist for creating the game. Didn't have the time to list more than 
 ### Priority Matrix
 Priority matrix for the game. Took the points from the checklist and organized them based on what I thought would take longer and what was a priority. See the checklist for details. Also doesn't include extra features. 
 ![Priority Matrix](/Photos/IMAG0026.jpg)
+
+## Game Components
+
+### Landing Page
+This is what the player will see when they load into the game. The instructions will be clearly visible and the player won't be able to start the game until they click on the "Start Game" button. 
+![Landing Page](Photos/Landing-Page)
+
+### Game Initialization
+After clicking the "Start Button" the game window should appear as depicted while the button fades into the background. From here the player can input commands and navigate around the cave. 
+![Game Start](Photos/Game-Start)
+
+
+
+
+
+
+
