@@ -1,6 +1,7 @@
 $(document).ready(() => {
   console.log("Up and Running");
 
+  // No longer using this file for JQuery, keeping for the notes.
   // Start of pseudocode
 
   // Click event for the start button

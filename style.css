@@ -86,16 +86,10 @@ footer {
  }
 
  #gameDsc {
-  overflow: hidden;
-  /*border-right: 2px solid #cccc00;*/
   color: #cccc00;
   line-height: 30px;
   font-size: 20px;
   font-family: 'Mogra', cursive;
-  /*animation only working if text is a single line*/
-/*  animation:
-  typing 4s steps(40, end),
-  cursor-blink 1s step-end infinite;*/
  }
 
  #start {

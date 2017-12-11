@@ -108,17 +108,17 @@ $(document).ready(() => {
   let $dsc = $("#gameDsc");
   $dsc.html(roomDsc);
 
-  // Function for changing rooms, not currently working
+  // Function for changing rooms, works until you accidentally walk into a wall. Next command reloads the page.
   function moveRoom(event) {
     let $command = $("input[name=commands]");
     let $output = $command.val();
-    let forward = "forward";
-    let backward = "backward";
-    let left = "left";
-    let right = "right";
+    const forward = "forward";
+    const backward = "backward";
+    const left = "left";
+    const right = "right";
     if ($output.toLowerCase() === forward) {
       if (currentRoom.fwd === false) {
-        alert("You smacked your head against the wall.")
+        alert("You smacked your head against the wall.");
       } if (currentRoom.fwd === true) {
         alert("You made it to the end! Where are you going now?");
       }
@@ -131,11 +131,10 @@ $(document).ready(() => {
       }
   } if ($output.toLowerCase() === backward) {
       if (currentRoom.bwd === false) {
-        alert("You smacked your head against the wall.")
+        alert("You smacked your head against the wall.");
       } if (currentRoom.bwd === true) {
         alert("You made it to the end! Where are you going now?");
-      }
-       else {
+      } else {
       // Changing the text inside the game window
       currentRoom = currentRoom.bwd;
       let roomDsc = currentRoom.text;
@@ -144,11 +143,10 @@ $(document).ready(() => {
       }
   } if ($output.toLowerCase() === left) {
       if (currentRoom.left === false) {
-        alert("You smacked your head against the wall.")
+        alert("You smacked your head against the wall.");
       } if (currentRoom.left === true) {
         alert("You made it to the end! Where are you going now?");
-      }
-      else {
+      } else {
       // Changing the text inside the game window
       currentRoom = currentRoom.left;
       let roomDsc = currentRoom.text;
@@ -157,7 +155,7 @@ $(document).ready(() => {
       }
   } if ($output.toLowerCase() === right) {
       if (currentRoom.right === false) {
-        alert("You smacked your head against the wall.")
+        alert("You smacked your head against the wall.");
       } if (currentRoom.right === true) {
         alert("You made it to the end! Where are you going now?");
       } else {
