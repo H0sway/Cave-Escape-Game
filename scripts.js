@@ -15,27 +15,109 @@ $(document).ready(() => {
     return;
   }
 
+  // Grabbing the form and creating a submit event
   const $form = $("form");
-  $form.submit(changeDsc);
+  $form.submit(moveRoom);
 
-  const start = "Starting area, text to follow";
-
-  let currentRoom = start;
-
-  function changeDsc(event) {
-    let $dsc = $("#gameDsc");
-    $dsc.html(currentRoom);
-    event.preventDefault();
-  }
-
-  function moveRoom(event) {
-    const $command = $("input[name=commands]");
-    let $output = $command.val();
-    if ($output = "Forward") {
-      console.log(currentRoom.prototype.fwd);
-    } else {
-      alert("Command not recognized. Check the instructions on the left.");
+  // Room constructor function
+  class Room {
+    constructor(forward,backward,left,right,text) {
+      this.fwd = forward;
+      this.bwd = backward;
+      this.left = left;
+      this.right = right;
+      this.text = text;
     }
+  }
+
+  // Creating each room
+  let $start = new Room(false,false,false,false,"Starting area, text to follow");
+  let $r1 = new Room(false,$start,false,false,"Text changed");
+  let $r2 = new Room(false,false,$r1,false,"You are now in room 2");
+  let $de1 = new Room(false,false,false,$r1,"This is the first dead end");
+  let $r3 = new Room(false,$r2,false,false, "Third room");
+  let $de2 = new Room(false,false,$r3,false,"Second dead end");
+  let $r4 = new Room(false,$r3,false,false,"Fourth room");
+
+  // Can't define room.direction unless the room it leads to has already been defined
+  // Redefining room.direction where needed
+  // Starting area
+  $start.fwd = $r1;
+  // Room 1
+  $r1.fwd = $de1;
+  $r1.right = $r2;
+  // Room 2
+  $r2.fwd = $r3;
+  // Room 3
+  $r3.fwd = $r4
+  $r3.right = $de2;
+
+  // storing what room the player is currently in
+  let currentRoom = $start;
+  let roomDsc = currentRoom.text;
+  let $dsc = $("#gameDsc");
+  $dsc.html(roomDsc);
+
+  // Function for changing rooms, not currently working
+  function moveRoom(event) {
+    let $command = $("input[name=commands]");
+    let $output = $command.val();
+    let forward = "forward";
+    let backward = "backward";
+    let left = "left";
+    let right = "right";
+    if ($output.toLowerCase() === forward) {
+      if (currentRoom.fwd === false) {
+        alert("You smacked your head against the wall.")
+      } else {
+      // Changing the text inside the game window
+      currentRoom = currentRoom.fwd;
+      let roomDsc = currentRoom.text;
+      let $dsc = $("#gameDsc");
+      $dsc.html(roomDsc);
+      }
+  } if ($output.toLowerCase() === backward) {
+      if (currentRoom.bwd === false) {
+        alert("You smacked your head against the wall.")
+      } else {
+      // Changing the text inside the game window
+      currentRoom = currentRoom.bwd;
+      let roomDsc = currentRoom.text;
+      let $dsc = $("#gameDsc");
+      $dsc.html(roomDsc);
+      }
+  } if ($output.toLowerCase() === left) {
+      if (currentRoom.left === false) {
+        alert("You smacked your head against the wall.")
+      } else {
+      // Changing the text inside the game window
+      currentRoom = currentRoom.left;
+      let roomDsc = currentRoom.text;
+      let $dsc = $("#gameDsc");
+      $dsc.html(roomDsc);
+      }
+  } if ($output.toLowerCase() === right) {
+      if (currentRoom.right === false) {
+        alert("You smacked your head against the wall.")
+      } else {
+      // Changing the text inside the game window
+      currentRoom = currentRoom.right;
+      let roomDsc = currentRoom.text;
+      let $dsc = $("#gameDsc");
+      $dsc.html(roomDsc);
+      }
+  }
     event.preventDefault();
   }
+
+  let $retry = $("#reset");
+  $retry.click(gameReset);
+
+  function gameReset(event) {
+    currentRoom = $start;
+    let roomDsc = currentRoom.text;
+    let $dsc = $("#gameDsc");
+    $dsc.html(roomDsc);
+  }
+
 }) // End of document.ready
