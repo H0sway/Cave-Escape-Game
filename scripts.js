@@ -30,7 +30,7 @@ $(document).ready(() => {
     }
   }
 
-  // Creating each room
+  // Creating each room, start =  starting room, r = normal room, de = dead end, finish = last room
   let $start = new Room(false,false,false,false,"Starting area, text to follow");
   let $r1 = new Room(false,$start,false,false,"Text changed");
   let $r2 = new Room(false,false,$r1,false,"You are now in room 2");
@@ -38,6 +38,15 @@ $(document).ready(() => {
   let $r3 = new Room(false,$r2,false,false, "Third room");
   let $de2 = new Room(false,false,$r3,false,"Second dead end");
   let $r4 = new Room(false,$r3,false,false,"Fourth room");
+  let $r5 = new Room(false,false,$r4,false,"Fifth room");
+  let $r6 = new Room(false,$r5,false,false,"Sixth room");
+  let $r7 = new Room(false,$r4,false,$r6,"7th room");
+  let $r8 = new Room(false,false,$r4,false,"Eighth room");
+  let $r9 = new Room(false,false,$r8,false,"9th room");
+  let $de3 = new Room(false,false,$r9,false,"Third dead end");
+  let $r10 = new Room($r9,false,false,false,"10th room");
+  let $de4 = new Room($r10,false,false,false,"Fourth dead end");
+  let $r11 = new Room(false,$r8,false,false,"11th room");
 
   // Can't define room.direction unless the room it leads to has already been defined
   // Redefining room.direction where needed
@@ -51,6 +60,21 @@ $(document).ready(() => {
   // Room 3
   $r3.fwd = $r4
   $r3.right = $de2;
+  // Room 4
+  $r4.right = $r5;
+  $r4.fwd = $r7;
+  $r4.left = $r8;
+  // Room 5
+  $r5.fwd = $r6;
+  // Room 6
+  $r6.left = $r7;
+  // Room 8
+  $r8.left = $r9;
+  // Room 9
+  $r9.right = $de3;
+  $r9.bwd = $r10;
+  // Room 10
+  $r10.bwd = $de4;
 
   // storing what room the player is currently in
   let currentRoom = $start;

@@ -8,6 +8,10 @@ These are concepts I drew on whiteboards when initially planning out the game. T
 First draft of the map of my game. I used this to see how many rooms I could expect to have if I had the time to make the game semi-complicated. Included potential concepts to trick the player, including circular layouts and dead ends.
 ![Map](/Photos/IMAG0024.jpg)
 
+### Map Fixed
+The original photo had a typo in it (two Room #11s) so I cleaned it up. Decided to go with this layout for now since it makes sense, even though it might be a bit complicated to write out.
+![Map](/Photos/IMAG0032.jpg)
+
 ### Landing Page 1.0
 Quick first draft of what I wanted the landing page to look like. Not very detailed.
 ![LP 1.0](/Photos/IMAG0025.jpg)
