@@ -132,13 +132,3 @@ footer {
   border: 3px solid #00264d;
   color: #4d4d00;
 }
-
-@keyframes typing {
-  from {width: 0;}
-  to {width: 100%;}
-}
-
-@keyframes cursor-blink {
-  from, to {border-color: transparent;}
-  50% {border-color: #cccc00;}
-}

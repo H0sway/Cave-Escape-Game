@@ -102,7 +102,7 @@ $(document).ready(() => {
   $r16.left = $finish;
 
 
-  // storing what room the player is currently in
+  // storing what room the player is currently in and changes the text in the game window
   let currentRoom = $start;
   let roomDsc = currentRoom.text;
   let $dsc = $("#gameDsc");
@@ -119,56 +119,43 @@ $(document).ready(() => {
     if ($output.toLowerCase() === forward) {
       if (currentRoom.fwd === false) {
         alert("You smacked your head against the wall.");
-      } if (currentRoom.fwd === true) {
-        alert("You made it to the end! Where are you going now?");
       }
       else {
-      // Changing the text inside the game window
+      // Changing room the player is in and the text inside the game window
       currentRoom = currentRoom.fwd;
-      let roomDsc = currentRoom.text;
-      let $dsc = $("#gameDsc");
+      roomDsc = currentRoom.text;
       $dsc.html(roomDsc);
       }
   } if ($output.toLowerCase() === backward) {
       if (currentRoom.bwd === false) {
         alert("You smacked your head against the wall.");
-      } if (currentRoom.bwd === true) {
-        alert("You made it to the end! Where are you going now?");
-      } else {
-      // Changing the text inside the game window
+    } else {
+      // Changing room the player is in and the text inside the game window
       currentRoom = currentRoom.bwd;
-      let roomDsc = currentRoom.text;
-      let $dsc = $("#gameDsc");
+      roomDsc = currentRoom.text;
       $dsc.html(roomDsc);
       }
   } if ($output.toLowerCase() === left) {
       if (currentRoom.left === false) {
         alert("You smacked your head against the wall.");
-      } if (currentRoom.left === true) {
-        alert("You made it to the end! Where are you going now?");
       } else {
-      // Changing the text inside the game window
+      // Changing room the player is in and the text inside the game window
       currentRoom = currentRoom.left;
-      let roomDsc = currentRoom.text;
-      let $dsc = $("#gameDsc");
+      roomDsc = currentRoom.text;
       $dsc.html(roomDsc);
       }
   } if ($output.toLowerCase() === right) {
       if (currentRoom.right === false) {
         alert("You smacked your head against the wall.");
-      } if (currentRoom.right === true) {
-        alert("You made it to the end! Where are you going now?");
       } else {
-      // Changing the text inside the game window
+      // Changing room the player is in and the text inside the game window
       currentRoom = currentRoom.right;
-      let roomDsc = currentRoom.text;
-      let $dsc = $("#gameDsc");
+      roomDsc = currentRoom.text;
       $dsc.html(roomDsc);
       }
   } if ($output.toLowerCase() === "finish") {
       currentRoom = $finish;
-      let roomDsc = currentRoom.text;
-      let $dsc = $("#gameDsc");
+      roomDsc = currentRoom.text;
       $dsc.html(roomDsc);
   }
     event.preventDefault();
@@ -178,9 +165,9 @@ $(document).ready(() => {
   $retry.click(gameReset);
 
   function gameReset(event) {
+    // Changing room the player is in and the text inside the game window
     currentRoom = $start;
-    let roomDsc = currentRoom.text;
-    let $dsc = $("#gameDsc");
+    roomDsc = currentRoom.text;
     $dsc.html(roomDsc);
   }
 
