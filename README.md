@@ -56,17 +56,28 @@ The player wins the game when they've reached the exit to the cave. A congratula
 
 ### Functional Components
 
-|Component|Priority|Estimated Time|Time Invested|
-|---------|--------|--------------|-------------|
-|Landing Page| H   | 1.5h         | 2h          |
-|Room Classes| H   | 2h           | 1.5h        |
-|Move Function| H  | 10h          | 14h         |
-|Reset Function| H | 30m          | 15m         |
-|Start Game| M     | 1h           | 45m         |
-|Song |  M         | 4h           | 2h          |   
+|Component     |Priority|Estimated Time|Actual Time  |
+|--------------|--------|--------------|-------------|
+|Landing Page  | H      | 1.5h         | 2h          |
+|Room Classes  | H      | 2h           | 1.5h        |
+|Move Function | H      | 10h          | 14h         |
+|Reset Function| M      | 30m          | 15m         |
+|Start Game    | M      | 1h           | 45m         |
+|Song          | M      | 4h           | 2h          |   
 
 ## Additional Libraries
 I used JQuery to grab DOM elements and use them in my JavaScript functions. 
+
+## Code Snippet
+
+![Constructor Function](/Photos/constructor-function.png)
+This was the constructor function I used to create each section of the cave. Each "room" has 5 properties: one for each direction the player can move and one for the text that should be displayed in the in-game window when the player moves to that part of the cave. If there's another section of the cave the player can move to the corresponding property is defined as the variable for the room they're moving to. Directions with nowhere to move to are defined as false and an alert pops up if the player attempts to move in that direction telling them they've bumped into a wall. The final room in the game has each direction set to true so that the player is unable to move back into the cave after they've won. The text property has a unique description for each room so that the player is able to identify where they are and find a sense of direction based on the text alone. 
+
+## JQuery Discoveries
+Here's a list of all the additional JQuery features I learned about while creating this project:
+* .toLowerCase() converts a string to lowercase. I used this to convert the form input to lowercase so capitalization doesn't matter when the player inputs a command.
+* .play() plays an HTML audio element. This is how a song plays when the player reaches the section of the cave right before the ending. 
+*.pause() pauses an HTML audio element. I didn't use this function since the song plays at the very end of the game, and the song is under 2 minutes long. 
 
 ## Issues and Resolutions
 
