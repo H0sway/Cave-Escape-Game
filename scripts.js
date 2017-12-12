@@ -154,11 +154,27 @@ $(document).ready(() => {
       $dsc.html(roomDsc);
       }
   } if ($output.toLowerCase() === "finish") {
-      currentRoom = $finish;
+      currentRoom = $r15;
       roomDsc = currentRoom.text;
       $dsc.html(roomDsc);
   }
     event.preventDefault();
+  }
+
+  // Function to play a song in a specific room
+  // Grab the audio html tag
+  const $song = $("#song");
+  // Tie the function to a keyup event
+  $(document).keyup(playSong);
+  // Function declaration
+  function playSong() {
+    // Keycode for the enter key
+    const keyCode = 13;
+    // If you hit enter and the current room changes to $r16
+    if (event.which === keyCode && currentRoom === $r16) {
+      // Hit the music
+      $song[0].play();
+    }
   }
 
   let $retry = $("#reset");
