@@ -117,7 +117,9 @@ $(document).ready(() => {
     const left = "left";
     const right = "right";
     if ($output.toLowerCase() === forward) {
-      if (currentRoom.fwd === false) {
+      if (currentRoom.fwd === true) {
+        alert("You escaped! Where are you trying to go now?");
+      } if (currentRoom.fwd === false) {
         alert("You smacked your head against the wall.");
       }
       else {
@@ -127,7 +129,9 @@ $(document).ready(() => {
       $dsc.html(roomDsc);
       }
   } if ($output.toLowerCase() === backward) {
-      if (currentRoom.bwd === false) {
+     if (currentRoom.bwd === true) {
+        alert("You escaped! Where are you trying to go now?");
+      } if (currentRoom.bwd === false) {
         alert("You smacked your head against the wall.");
     } else {
       // Changing room the player is in and the text inside the game window
@@ -136,7 +140,9 @@ $(document).ready(() => {
       $dsc.html(roomDsc);
       }
   } if ($output.toLowerCase() === left) {
-      if (currentRoom.left === false) {
+      if (currentRoom.left === true) {
+        alert("You escaped! Where are you trying to go now?");
+      } if (currentRoom.left === false) {
         alert("You smacked your head against the wall.");
       } else {
       // Changing room the player is in and the text inside the game window
@@ -145,7 +151,9 @@ $(document).ready(() => {
       $dsc.html(roomDsc);
       }
   } if ($output.toLowerCase() === right) {
-      if (currentRoom.right === false) {
+      if (currentRoom.right === true) {
+        alert("You escaped! Where are you trying to go now?");
+      } if (currentRoom.right === false) {
         alert("You smacked your head against the wall.");
       } else {
       // Changing room the player is in and the text inside the game window
