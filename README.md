@@ -54,13 +54,15 @@ After entering a valid command the player should see the text in the game window
 ### Winning the Game
 The player wins the game when they've reached the exit to the cave. A congratulatory message will display, telling the player they've escaped from the cave successfully, and if they wish to try again to press the "Retry" button. 
 
+### Functional Components
 
-
-
-
-
-
-
+|Component|Priority|Estimated Time|Time Invested|
+|---------|--------|--------------|-------------|
+|Landing Page| H   | 1.5h         | 2h          |
+|Room Classes| H   | 2h           | 1.5h        |
+|Move Function| H  | 10h          | 14h         |
+|Reset Funtion| H  | 30m          | 15m         |
+|Song |  M         | 4h           | 2h          |   
 
 
 
