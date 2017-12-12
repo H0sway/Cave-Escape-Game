@@ -61,8 +61,36 @@ The player wins the game when they've reached the exit to the cave. A congratula
 |Landing Page| H   | 1.5h         | 2h          |
 |Room Classes| H   | 2h           | 1.5h        |
 |Move Function| H  | 10h          | 14h         |
-|Reset Funtion| H  | 30m          | 15m         |
+|Reset Function| H | 30m          | 15m         |
+|Start Game| M     | 1h           | 45m         |
 |Song |  M         | 4h           | 2h          |   
+
+## Additional Libraries
+I used JQuery to grab DOM elements and use them in my JavaScript functions. 
+
+## Issues and Resolutions
+
+### Defining each Room Class
+When initially working on my constructor function for my room I realized that if I tried defining a room as a property of another room before it was defined in my code it wouldn't be recognized as a variable and my code wouldn't run. I fixed this by redefining the forward, backward, left, and right properties of rooms after defining all the rooms in my JS file when those rooms connected to rooms defined after them. 
+
+### Creating a Functioning Game Class
+I originally wanted to create a separate class to render my game and include the move function as a method, but I was having difficulty getting the method to run properly. It was easier to define and call the function outside of the class, so I got it working that way. 
+
+### Playing a Song in a Specific Room
+
+As a fun extra feature I wanted to play a song when the player reached the penultimate part of the cave. I managed to get the song to play when the page loaded through an audio tag in the HTML, but wasn't sure how to write the function to have it play. My first attempt was adding in a separate if statement in my move function, but that caused the function to not run at all. I then tried to write a separate function also trying it to the .submit() event in JQuery, but that wasn't responding at all. I searched online and even asked a question on Stack Overflow, but was unable to find a way to get the song to play. I ended with using a .keyup() function and having the song play if event.which === 13 (keycode for the enter key) and the currentRoom variable (where I stored what room the player was in) was equal to the class defining the second-to-last room in the cave.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
